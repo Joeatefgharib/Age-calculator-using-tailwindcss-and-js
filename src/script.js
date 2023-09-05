@@ -45,4 +45,8 @@ function calculateAge() {
 }
 
 // Event listener for button click
-btn.addEventListener("click", calculateAge);
+btn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  calculateAge();
+});
