@@ -7,21 +7,19 @@ const monthOutput = document.getElementById("monthOutput");
 const dayOutput = document.getElementById("dayOutput");
 const btn = document.getElementById("btn");
 
-// Function to calculate age
 function calculateAge() {
   const inputDay = parseInt(dayInput.value, 10);
   const inputMonth = parseInt(monthInput.value, 10);
   const inputYear = parseInt(yearInput.value, 10);
 
   if (isNaN(inputDay) || isNaN(inputMonth) || isNaN(inputYear)) {
-    // Invalid input, clear outputs
     yearOutput.textContent = "- -";
     monthOutput.textContent = "- -";
     dayOutput.textContent = "- -";
   } else {
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
-    const currentMonth = currentDate.getMonth() + 1; // Months are 0-indexed
+    const currentMonth = currentDate.getMonth() + 1;
     const currentDay = currentDate.getDate();
 
     let years = currentYear - inputYear;
@@ -30,7 +28,7 @@ function calculateAge() {
 
     if (days < 0) {
       months -= 1;
-      days += 30; // Assuming 30 days in a month for simplicity
+      days += 30;
     }
 
     if (months < 0) {
@@ -44,7 +42,6 @@ function calculateAge() {
   }
 }
 
-// Event listener for button click
 btn.addEventListener("click", (e) => {
   e.preventDefault();
 
